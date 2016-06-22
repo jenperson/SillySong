@@ -1,25 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="pageSheet" id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="top" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jJR-mF-T00">
+                                <rect key="frame" x="72" y="181" width="456" height="30"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Stm-hy-kPP"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="ALB-ag-Zjq"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1l-54-0mx">
+                                <rect key="frame" x="22" y="10" width="555" height="163"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="555" id="FbU-38-0ho"/>
+                                    <constraint firstAttribute="height" constant="163" id="T18-NG-jO0"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Silly Song">
+                                        <attributes>
+                                            <color key="NSColor" red="0.011599536888996747" green="0.090166276929206979" blue="0.52493990384615385" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="36" name="AmericanTypewriter-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.31156745225455973" green="0.31509054296367633" blue="0.64991987179487176" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UuX-5m-vpQ">
+                                <rect key="frame" x="180" y="226" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Pt8-BZ-LSa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="QvX-AM-bWM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UuX-5m-vpQ" firstAttribute="top" secondItem="jJR-mF-T00" secondAttribute="bottom" constant="15" id="D2G-gB-Vp2"/>
+                            <constraint firstItem="jJR-mF-T00" firstAttribute="top" secondItem="O1l-54-0mx" secondAttribute="bottom" constant="8" id="EE8-v6-lcL"/>
+                            <constraint firstItem="O1l-54-0mx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ej1-4B-tpb"/>
+                            <constraint firstItem="O1l-54-0mx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-10" id="JD6-YQ-vJV"/>
+                            <constraint firstItem="UuX-5m-vpQ" firstAttribute="centerX" secondItem="jJR-mF-T00" secondAttribute="centerX" id="JTq-jd-lyI"/>
+                            <constraint firstItem="jJR-mF-T00" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ee7-Ww-EeA"/>
+                            <constraint firstItem="jJR-mF-T00" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="fwo-SP-kQp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jJR-mF-T00" secondAttribute="trailing" constant="52" id="h3I-9b-kXM"/>
+                            <constraint firstItem="jJR-mF-T00" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xh4-f5-ZdG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="UuX-5m-vpQ" id="YEC-Ls-Red"/>
+                        <outlet property="nameField" destination="jJR-mF-T00" id="cGG-Js-y08"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="306"/>
         </scene>
     </scenes>
 </document>
